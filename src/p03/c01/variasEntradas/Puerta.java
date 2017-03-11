@@ -1,14 +1,14 @@
-package p03.c01;
+package p03.c01.variasEntradas;
 
 import java.util.Random;
 
 public class Puerta implements Runnable {
-	private String nombrePuerta;
-	private ParqueDosEntradas parque;
+	private int numeroPuerta;
+	private ParqueVariasEntradas parque;
 	private int capacidadPuerta;
-
-	public Puerta(ParqueDosEntradas parque, String puerta, int capacidadPuerta) {
-		this.nombrePuerta = puerta;
+	
+	public Puerta(ParqueVariasEntradas parque, int puerta, int capacidadPuerta) {
+		this.numeroPuerta = puerta;
 		this.parque = parque;
 		this.capacidadPuerta = capacidadPuerta;
 	}
@@ -18,18 +18,19 @@ public class Puerta implements Runnable {
 		Random rdm = new Random();
 
 		for (int i = 0; i < capacidadPuerta; i++) {
-			parque.entrar(nombrePuerta);
+			parque.entrar(numeroPuerta);
 			try {
 				Thread.sleep((long) (rdm.nextDouble() * 1000));
 			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 
 	}
 	
-	public String getNombrePuerta(){
-		return nombrePuerta;
+	public int getNumeroPuerta(){
+		return numeroPuerta;
 	}
 
 }

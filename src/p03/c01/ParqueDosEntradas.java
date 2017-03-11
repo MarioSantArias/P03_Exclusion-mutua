@@ -24,7 +24,7 @@ public class ParqueDosEntradas {
 			contadorB++;
 			System.out.println("Entrada al parque por la puerta B");
 		} 
-		System.out.println("-->Personas en el parque " + (contadorA + contadorB) + "tiempo medio de estancia: " + ((actual - inicio)/1000.0));
+		System.out.println("-->Personas en el parque " + (contadorA + contadorB) + " tiempo medio de estancia: " + ((actual - inicio)/1000.0));
 		System.out.println("--->Por puerta A " + contadorA);
 		System.out.println("--->Por puerta B " + contadorB);
 		checkInvariantes();
@@ -33,7 +33,7 @@ public class ParqueDosEntradas {
 	private void checkInvariantes() {
 		assert contadorA <= CAPACIDADPUERTA : "Sobrepasado limite de puerta A";
 		assert contadorB <= CAPACIDADPUERTA : "Sobrepasado limite de puerta B";
-		assert (contadorA + contadorB) <= CAPACIDADPARQUE : "Sobrepasado limite de puerta A";
+		assert (contadorA + contadorB) <= CAPACIDADPARQUE : "Sobrepasado limite del parque";
 
 	}
 
